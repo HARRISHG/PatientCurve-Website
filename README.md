@@ -1,6 +1,6 @@
-# PatientCurve Website
+# Patientcurve Website
 
-Marketing site for PatientCurve, a revenue-growth system for dental clinics. Production URL: https://patientcurve.com
+Marketing site for Patientcurve, the follow-up and recovery service for dental clinics. Production URL: https://patientcurve.com
 
 It is a static site with no build step and no dependencies: plain HTML, CSS and JavaScript, hosted on Netlify.
 
@@ -55,6 +55,20 @@ Or install the Netlify CLI and run `netlify dev`. This applies the same redirect
 - Copy lives directly in the HTML files.
 - If you add a page, add it to `sitemap.xml` and give it a `<link rel="canonical">`.
 - CSS and JS are cached for one hour (`netlify.toml`), so changes reach every visitor within about an hour of deploying.
+
+## Brand
+
+The site follows the Patientcurve brand guidelines (v1.0, October 2026):
+
+- **Colours:** jade `#0E7C6B` (buttons, links, highlights), deep `#14232B` (dark panels, text), tint `#DCEFEA`, surface `#F6F8F7`. Rose `#E2607A` (or rose light `#F08AA0` on deep) is for the returning dot only and is never used as text. Warning `#8F5A0E` marks due or overdue states; danger `#C0392B` marks lost states.
+- **Type:** Familjen Grotesk 600 for headlines, Hind Madurai for body text and labels, IBM Plex Mono for figures and status pills. All three load from Google Fonts.
+- **Style:**
+  - Headlines and buttons in sentence case, with text left-aligned.
+  - Flat surfaces: no shadows and no gradients.
+  - Corners of 12px on cards and buttons and 24px on large panels. Status pills are outlined, in mono text.
+- **Logo:** use the master files in `assets/img/patientcurve-logo*.svg` and never retype the wordmark. In sentences, the name is written "Patientcurve" (capital P only).
+- **Return curve:** used once per page, on the closing panel.
+- **Figures:** rupees in Indian format (₹1,84,500). The estimator defaults to ₹.
 
 ## Accessibility and performance
 
