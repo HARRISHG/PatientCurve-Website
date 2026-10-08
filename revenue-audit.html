@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Revenue Audit — PatientCurve</title>
+  <meta name="description" content="How much revenue could your dental clinic be leaving behind? Get a free PatientCurve revenue audit of your patient flow, follow-up and missed opportunities.">
+  <meta name="theme-color" content="#0a1d27">
+  <meta property="og:title" content="How Much Revenue Could Your Clinic Be Leaving Behind?">
+  <meta property="og:description" content="Get a free revenue audit for your dental clinic from PatientCurve.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Inter+Tight:wght@500..800&family=Instrument+Serif:ital@1&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="PatientCurve home">
+        <svg class="logo-mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#0a1d27"/><path class="curve" d="M7 25c5 0 6-4 8-8s4-8 12-8" fill="none" stroke="#5fe0bd" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="9" r="2.6" fill="#fff"/></svg>
+        PatientCurve
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span></button>
+      <nav id="site-nav" class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="revenue-audit.html" aria-current="page">Revenue Audit</a>
+        <a class="btn btn--primary btn--sm" href="#audit">Get My Revenue Audit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO + FORM ============ -->
+    <section class="page-hero" id="audit">
+      <div class="container audit-grid">
+        <div class="audit-intro">
+          <p class="eyebrow" data-reveal>Free revenue audit</p>
+          <h1 class="h1" data-reveal style="--d:.05s">How Much Revenue Could Your Clinic Be <span class="serif grad-text">Leaving Behind?</span></h1>
+          <p class="lead" data-reveal style="--d:.12s">We'll look at your patient flow, follow-up process and missed opportunities to identify where your clinic can grow.</p>
+          <ul class="audit-list" data-reveal style="--d:.18s">
+            <li>
+              <span class="icon-tile icon-tile--sky"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+              <div><strong>Your patient flow</strong><span>How enquiries and patients move through your clinic — and where they stop.</span></div>
+            </li>
+            <li>
+              <span class="icon-tile icon-tile--teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg></span>
+              <div><strong>Your follow-up process</strong><span>What happens after an enquiry, a missed call, a no-show or a treatment plan.</span></div>
+            </li>
+            <li>
+              <span class="icon-tile icon-tile--coral"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></span>
+              <div><strong>Your missed opportunities</strong><span>Inactive patients, unbooked treatment, overdue recalls and leads that went quiet.</span></div>
+            </li>
+            <li>
+              <span class="icon-tile icon-tile--ink"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span>
+              <div><strong>Your growth plan</strong><span>Clear next steps to turn follow-up into more appointments and revenue.</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-card" data-reveal="scale" style="--d:.1s">
+          <form id="audit-form" novalidate data-endpoint="" aria-describedby="form-intro">
+            <h2>Get your free revenue audit</h2>
+            <p class="form-sub" id="form-intro">Takes about a minute. We'll get back to you to arrange a short call.</p>
+            <div class="form-progress" aria-hidden="true"><span></span></div>
+
+            <div class="fields">
+              <div class="field" data-field="name" data-required>
+                <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+                <p class="field-error" id="e-name" role="alert"></p>
+              </div>
+              <div class="field" data-field="clinic" data-required>
+                <label for="f-clinic">Clinic name <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-clinic" name="clinic" type="text" autocomplete="organization" required aria-describedby="e-clinic">
+                <p class="field-error" id="e-clinic" role="alert"></p>
+              </div>
+              <div class="field" data-field="phone" data-required>
+                <label for="f-phone">WhatsApp / Phone <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-phone">
+                <p class="field-error" id="e-phone" role="alert"></p>
+              </div>
+              <div class="field" data-field="email" data-required>
+                <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+                <p class="field-error" id="e-email" role="alert"></p>
+              </div>
+              <div class="field field--full" data-field="volume" data-required>
+                <label for="f-volume">Monthly patient volume <span class="req" aria-hidden="true">*</span></label>
+                <select class="input" id="f-volume" name="volume" required aria-describedby="e-volume">
+                  <option value="">Choose a range</option>
+                  <option>Fewer than 100 patients</option>
+                  <option>100–300 patients</option>
+                  <option>300–600 patients</option>
+                  <option>600–1,000 patients</option>
+                  <option>More than 1,000 patients</option>
+                  <option>Not sure</option>
+                </select>
+                <p class="field-error" id="e-volume" role="alert"></p>
+              </div>
+              <fieldset class="field field--full" data-field="challenge" data-required aria-describedby="e-challenge">
+                <legend>Biggest growth challenge <span class="req" aria-hidden="true">*</span></legend>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="challenge" value="Enquiries not booking"><span>Enquiries not booking</span></label>
+                  <label class="chip"><input type="radio" name="challenge" value="Missed calls and messages"><span>Missed calls &amp; messages</span></label>
+                  <label class="chip"><input type="radio" name="challenge" value="No-shows"><span>No-shows</span></label>
+                  <label class="chip"><input type="radio" name="challenge" value="Patients not coming back"><span>Patients not coming back</span></label>
+                  <label class="chip"><input type="radio" name="challenge" value="Treatment plans not booked"><span>Treatment plans not booked</span></label>
+                  <label class="chip"><input type="radio" name="challenge" value="Recalls slipping"><span>Recalls slipping</span></label>
+                  <label class="chip"><input type="radio" name="challenge" value="Not sure yet"><span>Not sure yet</span></label>
+                </div>
+                <p class="field-error" id="e-challenge" role="alert"></p>
+              </fieldset>
+              <div class="field field--full">
+                <label for="f-notes">Anything else we should know? <span class="opt">(optional)</span></label>
+                <textarea class="input" id="f-notes" name="notes" rows="3"></textarea>
+              </div>
+              <div class="sr-only" aria-hidden="true">
+                <label for="f-website">Leave this empty</label>
+                <input id="f-website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-foot">
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <button class="btn btn--primary btn--lg btn--block" type="submit">
+                <span class="spinner" aria-hidden="true"></span>
+                Get My Free Revenue Audit
+                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <p class="form-note">Free, with no obligation. We'll only use your details to contact you about your audit.</p>
+            </div>
+          </form>
+
+          <div class="success" id="audit-success" tabindex="-1" hidden>
+            <div class="success-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h2>Thank you — your audit request is in.</h2>
+            <p>We'll be in touch on WhatsApp or by phone to arrange a short call at a time that suits you.</p>
+            <ol class="next">
+              <li><b>1</b>We review your clinic's details</li>
+              <li><b>2</b>We contact you to arrange your call</li>
+              <li><b>3</b>We show you where your clinic can grow</li>
+            </ol>
+            <p class="demo-note" data-demo-note hidden>Preview mode: this form isn't connected to an inbox yet, so nothing was sent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST ============ -->
+    <section class="section section--white section--tight">
+      <div class="container">
+        <div class="section-head section-head--center" style="margin-bottom:48px">
+          <p class="eyebrow" data-reveal>Why clinics talk to us</p>
+          <h2 class="h2" data-reveal>A growth partner that speaks <span class="serif">dental.</span></h2>
+        </div>
+        <div class="trust-grid">
+          <article class="trust" data-reveal style="--d:0s">
+            <div class="icon-tile icon-tile--ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5C10.5 4 8.5 3.5 7 4 4.5 4.8 4 7.5 4.6 10c.5 2 1 3.3 1.4 6 .4 2.5 1 4 2 4s1.5-1.6 2-3.5c.4-1.4.8-2 2-2s1.6.6 2 2c.5 1.9 1 3.5 2 3.5s1.6-1.5 2-4c.4-2.7.9-4 1.4-6 .6-2.5.1-5.2-2.4-6-1.5-.5-3.5 0-5 1.5z"/></svg></div>
+            <h3>Built for dental clinics</h3>
+            <p>Made for the way dental clinics work — enquiries, treatment plans, recalls and a busy front desk.</p>
+          </article>
+          <article class="trust" data-reveal style="--d:.06s">
+            <div class="icon-tile icon-tile--ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+            <h3>Revenue-focused</h3>
+            <p>Every part of the system is aimed at one result: more booked appointments and more revenue.</p>
+          </article>
+          <article class="trust" data-reveal style="--d:.12s">
+            <div class="icon-tile icon-tile--ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg></div>
+            <h3>Simple implementation</h3>
+            <p>No complicated setup. PatientCurve fits around how your clinic already works.</p>
+          </article>
+          <article class="trust" data-reveal style="--d:.18s">
+            <div class="icon-tile icon-tile--ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0 1 12 0M18 7v6M15 10h6"/></svg></div>
+            <h3>Human + automation</h3>
+            <p>Automation keeps follow-up consistent. Real people handle the conversations that matter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ESTIMATOR ============ -->
+    <section class="section" id="estimate">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-reveal>Quick estimate</p>
+          <h2 class="h2" data-reveal>Do the math with <span class="serif">your own numbers.</span></h2>
+          <p class="lead" data-reveal>Just one example: patients who haven't visited in a while. Enter rough numbers from your clinic and see what bringing a few of them back could be worth.</p>
+        </div>
+        <div class="estimator" data-estimator data-reveal="scale">
+          <div class="est-inputs">
+            <div class="est-row">
+              <label for="est-patients">Patients who haven't visited in over a year</label>
+              <input class="input" id="est-patients" type="text" inputmode="numeric" placeholder="Your number" autocomplete="off">
+              <span class="hint">A rough number is fine.</span>
+            </div>
+            <div class="est-row">
+              <label for="est-value">Average value of a returning patient's visit</label>
+              <div class="money-input">
+                <label class="sr-only" for="est-currency">Currency</label>
+                <select class="input" id="est-currency">
+                  <option value="$">$</option>
+                  <option value="£">£</option>
+                  <option value="€">€</option>
+                  <option value="₹">₹</option>
+                  <option value="AED ">AED</option>
+                </select>
+                <input class="input" id="est-value" type="text" inputmode="decimal" placeholder="Your average" autocomplete="off">
+              </div>
+            </div>
+            <div class="est-row">
+              <label for="est-pct">If you brought back this share of them</label>
+              <div class="range-row">
+                <input class="range" id="est-pct" type="range" min="1" max="30" step="1" value="5" aria-describedby="est-pct-hint">
+                <output id="est-pct-out" for="est-pct">5%</output>
+              </div>
+              <span class="hint" id="est-pct-hint">Your own assumption — move it to see how the result changes.</span>
+            </div>
+          </div>
+          <div class="est-output">
+            <p class="est-label">Revenue from bringing these patients back</p>
+            <p class="est-value" data-est-total>—</p>
+            <p class="est-sub">Based only on the numbers you entered.</p>
+            <div class="est-breakdown">
+              <div><span>Patients brought back</span><strong data-est-back>—</strong></div>
+              <div><span>Value per visit</span><strong data-est-each>—</strong></div>
+            </div>
+            <p class="est-disclaimer">A simple estimate from your own numbers — not a promise or a prediction. It doesn't include follow-up treatment, future check-ups, or the other five opportunity types. Your audit looks at the full picture.</p>
+            <a class="btn btn--light" href="#audit">Get My Free Revenue Audit
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--white" id="faq">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-reveal>Questions</p>
+          <h2 class="h2" data-reveal>Before you book</h2>
+        </div>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>Is the revenue audit really free?</summary>
+            <p>Yes. The audit is free, and there's no obligation to work with us afterwards. You'll get a clear view of where your clinic is missing appointments either way.</p>
+          </details>
+          <details>
+            <summary>What happens after I send the form?</summary>
+            <p>We'll contact you on WhatsApp or by phone to arrange a call at a time that suits you. We'll ask a few simple questions about your clinic and walk you through where we see room to grow.</p>
+          </details>
+          <details>
+            <summary>Do we need to change how our clinic works?</summary>
+            <p>No. PatientCurve is set up around your clinic's existing way of working, so your team can carry on as they do today — with follow-up that no longer depends on someone remembering.</p>
+          </details>
+          <details>
+            <summary>Will our patients feel spammed?</summary>
+            <p>No. Follow-up is friendly, relevant and spaced out sensibly. Real people step in for conversations that need a personal touch.</p>
+          </details>
+          <details>
+            <summary>Is PatientCurve only for dental clinics?</summary>
+            <p>Yes. PatientCurve is built specifically for dental clinics — from new patient enquiries to treatment plans and recalls.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-panel" data-reveal="scale">
+          <svg class="cta-curve" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 280 C300 270 420 240 600 180 S950 40 1200 20" fill="none" stroke="#5fe0bd" stroke-width="2"/></svg>
+          <h2 class="h2">More follow-up. More appointments. <span class="serif grad-text">More revenue.</span></h2>
+          <p>Find out where your clinic's next appointments are hiding.</p>
+          <div class="btn-row">
+            <a class="btn btn--light btn--lg" href="#audit">Get My Free Revenue Audit
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="PatientCurve home">
+            <svg class="logo-mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#0a1d27"/><path class="curve" d="M7 25c5 0 6-4 8-8s4-8 12-8" fill="none" stroke="#5fe0bd" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="9" r="2.6" fill="#fff"/></svg>
+            PatientCurve
+          </a>
+          <p>The revenue-growth system for dental clinics. More follow-up, more appointments, more revenue.</p>
+        </div>
+        <div>
+          <p class="footer-title">Explore</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="revenue-audit.html">Revenue Audit</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Get started</p>
+          <ul class="footer-links">
+            <li><a href="#audit">Get my free revenue audit</a></li>
+            <li><a href="#estimate">Estimate your opportunity</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> PatientCurve. All rights reserved.</span>
+        <span>Built for dental clinics.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><a class="btn btn--primary" href="#audit">Get My Free Revenue Audit</a></div>
+</body>
+</html>
