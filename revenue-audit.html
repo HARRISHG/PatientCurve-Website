@@ -9,27 +9,38 @@
   <meta property="og:title" content="How Much Revenue Could Your Clinic Be Leaving Behind?">
   <meta property="og:description" content="Get a free revenue audit for your dental clinic from PatientCurve.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:site_name" content="PatientCurve">
+  <meta property="og:url" content="https://patientcurve.com/revenue-audit">
+  <meta property="og:image" content="https://patientcurve.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PatientCurve — more follow-up, more appointments, more revenue for dental clinics">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://patientcurve.com/revenue-audit">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Inter+Tight:wght@500..800&family=Instrument+Serif:ital@1&display=swap">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script defer src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="index.html" aria-label="PatientCurve home">
+      <a class="logo" href="/" aria-label="PatientCurve home">
         <svg class="logo-mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#0a1d27"/><path class="curve" d="M7 25c5 0 6-4 8-8s4-8 12-8" fill="none" stroke="#5fe0bd" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="9" r="2.6" fill="#fff"/></svg>
         PatientCurve
       </a>
       <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span></button>
       <nav id="site-nav" class="nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="revenue-audit.html" aria-current="page">Revenue Audit</a>
+        <a href="/">Home</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/revenue-audit" aria-current="page">Revenue Audit</a>
         <a class="btn btn--primary btn--sm" href="#audit">Get My Revenue Audit</a>
       </nav>
     </div>
@@ -65,7 +76,9 @@
         </div>
 
         <div class="form-card" data-reveal="scale" style="--d:.1s">
-          <form id="audit-form" novalidate data-endpoint="" aria-describedby="form-intro">
+          <form id="audit-form" name="revenue-audit" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="company_website" aria-describedby="form-intro">
+            <input type="hidden" name="form-name" value="revenue-audit">
+            <input type="hidden" name="estimate" value="">
             <h2>Get your free revenue audit</h2>
             <p class="form-sub" id="form-intro">Takes about a minute. We'll get back to you to arrange a short call.</p>
             <div class="form-progress" aria-hidden="true"><span></span></div>
@@ -147,7 +160,7 @@
               <li><b>2</b>We contact you to arrange your call</li>
               <li><b>3</b>We show you where your clinic can grow</li>
             </ol>
-            <p class="demo-note" data-demo-note hidden>Preview mode: this form isn't connected to an inbox yet, so nothing was sent.</p>
+            <p class="demo-note" data-demo-note hidden>Local preview: nothing was sent. The form submits for real once the site is deployed on Netlify.</p>
           </div>
         </div>
       </div>
@@ -291,7 +304,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="logo" href="index.html" aria-label="PatientCurve home">
+          <a class="logo" href="/" aria-label="PatientCurve home">
             <svg class="logo-mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#0a1d27"/><path class="curve" d="M7 25c5 0 6-4 8-8s4-8 12-8" fill="none" stroke="#5fe0bd" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="9" r="2.6" fill="#fff"/></svg>
             PatientCurve
           </a>
@@ -300,9 +313,9 @@
         <div>
           <p class="footer-title">Explore</p>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="revenue-audit.html">Revenue Audit</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/revenue-audit">Revenue Audit</a></li>
           </ul>
         </div>
         <div>

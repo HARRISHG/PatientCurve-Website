@@ -1,0 +1,52 @@
+# Static site: no build step. Netlify serves /how-it-works from how-it-works.html automatically.
+[build]
+  publish = "."
+  command = ""
+
+# Old .html URLs -> clean URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/how-it-works.html"
+  to = "/how-it-works"
+  status = 301
+
+[[redirects]]
+  from = "/revenue-audit.html"
+  to = "/revenue-audit"
+  status = 301
+
+[[redirects]]
+  from = "/thanks.html"
+  to = "/thanks"
+  status = 301
+
+# Friendly shortcuts
+[[redirects]]
+  from = "/audit"
+  to = "/revenue-audit"
+  status = 301
+
+[[redirects]]
+  from = "/book"
+  to = "/revenue-audit"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+
+# CSS/JS/images aren't fingerprinted: cache briefly and revalidate in the background.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
