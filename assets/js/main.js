@@ -1,4 +1,4 @@
-/* PatientCurve — site interactions. No dependencies. */
+/* Patientcurve — site interactions. No dependencies. */
 (function () {
   "use strict";
 
@@ -267,7 +267,7 @@
     return { select: select, buttons: buttons };
   }
 
-  /* ---------- Leak pipeline: without vs with PatientCurve ---------- */
+  /* ---------- Leak pipeline: without vs with Patientcurve ---------- */
   (function pipeline() {
     var root = $("[data-pipeline]");
     if (!root) return;
@@ -534,7 +534,8 @@
       return isFinite(v) && v > 0 ? v : 0;
     }
     function money(n) {
-      return currency.value + Math.round(n).toLocaleString();
+      // Rupees in Indian grouping (₹1,84,500), per the brand guidelines.
+      return currency.value + Math.round(n).toLocaleString(currency.value === "₹" ? "en-IN" : undefined);
     }
     function update() {
       var p = num(patients), v = num(value), share = parseFloat(pct.value) || 0;
@@ -542,7 +543,7 @@
       pct.style.setProperty("--fill", ((share - pct.min) / (pct.max - pct.min)) * 100 + "%");
       var back = Math.round(p * share / 100);
       var total = back * v;
-      outBack.textContent = p ? back.toLocaleString() + " patients" : "—";
+      outBack.textContent = p ? back.toLocaleString("en-IN") + " patients" : "—";
       outEach.textContent = v ? money(v) : "—";
       if (!p || !v) { out.textContent = "—"; last = 0; return; }
       animateNumber(out, total, { from: last, duration: 600, format: money });
@@ -656,7 +657,7 @@
       }
 
       if (isPreview) {
-        if (window.console) console.info("[PatientCurve] Local preview: the audit form was not sent. It submits to Netlify Forms once deployed.");
+        if (window.console) console.info("[Patientcurve] Local preview: the audit form was not sent. It submits to Netlify Forms once deployed.");
         setTimeout(function () { showSuccess(true); }, 700);
         return;
       }
