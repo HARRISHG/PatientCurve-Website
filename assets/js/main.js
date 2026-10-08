@@ -556,6 +556,8 @@
   (function auditForm() {
     var form = $("#audit-form");
     if (!form) return;
+    // JS handles validation with friendlier messages; without JS the browser's built-in checks apply.
+    form.noValidate = true;
     var status = $(".form-status", form);
     var submit = $("button[type='submit']", form);
     var progress = $(".form-progress span");
@@ -632,47 +634,40 @@
         status.classList.add("is-error");
         return;
       }
-      if (form.elements.company_website && form.elements.company_website.value) return; // honeypot
+      // Honeypot: real visitors never fill this in. Pretend it worked so bots don't retry.
+      if (form.elements.company_website && form.elements.company_website.value) { showSuccess(false); return; }
 
-      var payload = {
-        name: form.elements.name.value.trim(),
-        clinic: form.elements.clinic.value.trim(),
-        phone: form.elements.phone.value.trim(),
-        email: form.elements.email.value.trim(),
-        monthly_patient_volume: form.elements.volume.value,
-        biggest_challenge: form.querySelector("input[name='challenge']:checked").value,
-        notes: (form.elements.notes && form.elements.notes.value.trim()) || "",
-        estimate: estimatorSummary(),
-        page: window.location.href,
-        submitted_at: new Date().toISOString()
-      };
+      // Carry the visitor's estimator result (if any) along with the lead.
+      if (form.elements.estimate) form.elements.estimate.value = estimatorSummary();
 
-      var endpoint = (form.getAttribute("data-endpoint") || "").trim();
+      // Netlify Forms only exists on the deployed site. Locally, show the success state without sending.
+      var host = window.location.hostname;
+      var isPreview = window.location.protocol === "file:" || host === "localhost" || host === "127.0.0.1" || host === "";
+
       submit.classList.add("is-loading"); submit.disabled = true;
 
-      function done() {
+      function showSuccess(preview) {
         submit.classList.remove("is-loading"); submit.disabled = false;
         form.hidden = true;
         success.hidden = false;
-        if (!endpoint) $("[data-demo-note]", success).hidden = false;
+        $("[data-demo-note]", success).hidden = !preview;
         success.focus();
         success.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
       }
 
-      if (!endpoint) {
-        // No endpoint configured yet (see README). Keep the experience intact in previews.
-        if (window.console) console.warn("[PatientCurve] Audit form has no data-endpoint configured; submission was not sent.", payload);
-        setTimeout(done, 700);
+      if (isPreview) {
+        if (window.console) console.info("[PatientCurve] Local preview: the audit form was not sent. It submits to Netlify Forms once deployed.");
+        setTimeout(function () { showSuccess(true); }, 700);
         return;
       }
 
-      fetch(endpoint, {
+      fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload)
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
       }).then(function (res) {
         if (!res.ok) throw new Error("HTTP " + res.status);
-        done();
+        showSuccess(false);
       }).catch(function () {
         submit.classList.remove("is-loading"); submit.disabled = false;
         status.textContent = "Something went wrong sending your request. Please try again in a moment.";
