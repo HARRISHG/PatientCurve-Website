@@ -1,6 +1,6 @@
 # Patientcurve Website
 
-Marketing site for Patientcurve: customized patient journey automation for dental clinics, on WhatsApp. Production URL: https://patientcurve.com
+Marketing site for Patientcurve: patient journey automation for dental clinics. Core idea: recover revenue from patients your clinic already has (Convert, Recover, Reactivate, Measure). Production URL: https://patientcurve.com
 
 It is a static site with no build step and no dependencies: plain HTML, CSS and JavaScript, hosted on Netlify.
 
