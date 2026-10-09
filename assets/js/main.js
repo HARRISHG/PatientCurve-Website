@@ -282,7 +282,7 @@
     var withoutPattern = [0, -1, 1, 2, 0, 1, -1, 2, 0, 1];
     var gapText = {
       without: ["No quick reply", "No second follow-up", "Not rebooked"],
-      with: ["Replied fast", "Followed up again", "Reminded + booked"]
+      with: ["Answered right away", "Follow-ups on day 1, 3, 7", "Booked + reminded"]
     };
 
     function setLabels() {

@@ -552,11 +552,11 @@ ul, ol { margin: 0; padding: 0; }
   content: ""; position: absolute; width: 380px; height: 380px; right: -120px; top: -140px; border-radius: 50%;
   background: radial-gradient(closest-side, rgba(63, 193, 170, 0.25), transparent);
 }
-.stage-progress { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.stage-progress { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .stage-progress span { height: 6px; border-radius: 6px; background: rgba(255, 255, 255, 0.12); position: relative; overflow: hidden; }
 .stage-progress span::after { content: ""; position: absolute; inset: 0; background: var(--mint); transform-origin: left; transform: scaleX(0); transition: transform 0.6s var(--ease); }
 .stage-progress span.is-on::after { transform: scaleX(1); }
-.stage-labels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; font-size: 12px; color: var(--on-dark-muted); font-weight: 600; }
+.stage-labels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 10px; font-size: 12px; color: var(--on-dark-muted); font-weight: 600; }
 .stage-labels span.is-on { color: #fff; }
 
 .journey-card {
@@ -583,6 +583,7 @@ ul, ol { margin: 0; padding: 0; }
 
 /* ---------- Opportunity cards ---------- */
 .opp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.opp-grid--two { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 960px) { .opp-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px) { .opp-grid { grid-template-columns: 1fr; } }
 .opp {
@@ -820,6 +821,18 @@ ul, ol { margin: 0; padding: 0; }
 .process li::before { counter-increment: proc; content: "0" counter(proc); font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--teal); letter-spacing: 0.1em; }
 .process h3 { font-size: 22px; margin: 14px 0 10px; }
 .process p { color: var(--muted); font-size: 15.5px; }
+
+.process--four { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .process--four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .process--four { grid-template-columns: 1fr; } }
+
+/* ---------- Timing table ---------- */
+.timing-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.timing { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 16px; }
+.timing th, .timing td { text-align: left; padding: 14px 22px; border-top: 1px solid var(--line); vertical-align: top; }
+.timing thead th { border-top: 0; font: 600 12px/16px var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.timing td.t { font: 500 14px/1.5 var(--font-mono); color: var(--teal); white-space: nowrap; }
+.timing tbody tr:hover { background: var(--surface-2); }
 
 /* ---------- Audit page ---------- */
 .audit-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(36px, 5vw, 72px); align-items: start; }
