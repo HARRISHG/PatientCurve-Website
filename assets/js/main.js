@@ -559,6 +559,13 @@
     if (!form) return;
     // JS handles validation with friendlier messages; without JS the browser's built-in checks apply.
     form.noValidate = true;
+
+    // Links such as "Talk to us about a customized solution" pre-select what the visitor is looking for.
+    var interestParam = new URLSearchParams(window.location.search).get("interest");
+    if (interestParam === "custom" || interestParam === "journey") {
+      var preset = form.querySelector("input[name='interest'][value='" + (interestParam === "custom" ? "Customized solution" : "Patient journey automation") + "']");
+      if (preset) preset.checked = true;
+    }
     var status = $(".form-status", form);
     var submit = $("button[type='submit']", form);
     var progress = $(".form-progress span");
