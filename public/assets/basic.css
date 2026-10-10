@@ -1,0 +1,17 @@
+/* Styles for the small standalone pages (404, thanks). The main site uses the Vite build. */
+*{box-sizing:border-box}
+body{margin:0;background:#F6F8F7;color:#14232B;font:17px/1.6 "Hind Madurai",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{border-bottom:1px solid #D5DEDB}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+header .wrap{height:68px;display:flex;align-items:center}
+main .wrap{padding-top:clamp(56px,10vw,120px);padding-bottom:clamp(56px,10vw,120px);max-width:720px;margin-left:max(16px,calc((100vw - 1200px)/2 + 16px))}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0E7C6B;margin:0}
+h1{font-family:"Familjen Grotesk",system-ui,sans-serif;font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.01em;margin:16px 0 0}
+p.lead{font-size:19px;color:#5B6B70;margin:20px 0 0}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid #D5DEDB;background:#fff}
+.btn-primary{background:#0E7C6B;border-color:#0E7C6B;color:#fff}
+.btn-primary:hover{background:#0A6356}
+.btn:not(.btn-primary):hover{border-color:#0E7C6B;color:#0E7C6B}
+:focus-visible{outline:3px solid #0E7C6B;outline-offset:2px;border-radius:6px}

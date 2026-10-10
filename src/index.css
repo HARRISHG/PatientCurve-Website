@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* Patientcurve brand v1.0 */
+@theme {
+  --color-jade: #0E7C6B;
+  --color-jade-dark: #0A6356;
+  --color-jade-light: #3FC0A6;
+  --color-deep: #14232B;
+  --color-deep-2: #1E313A;
+  --color-tint: #DCEFEA;
+  --color-surface: #F6F8F7;
+  --color-muted: #5B6B70;
+  --color-line: #D5DEDB;
+  --color-warning: #8F5A0E;
+  --color-warning-tint: #F7EEDF;
+  --color-danger: #C0392B;
+  --color-rose: #E2607A;
+  --color-rose-light: #F08AA0;
+
+  --font-display: "Familjen Grotesk", system-ui, sans-serif;
+  --font-sans: "Hind Madurai", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-surface text-deep font-sans antialiased; font-size: 17px; line-height: 1.6; }
+  h1, h2, h3, h4 { @apply font-display font-semibold; letter-spacing: -0.01em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  section[id] { scroll-margin-top: 84px; }
+  :focus-visible { outline: 3px solid var(--color-jade); outline-offset: 2px; border-radius: 6px; }
+  .on-dark :focus-visible { outline-color: var(--color-jade-light); }
+  [hidden] { display: none !important; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-20 sm:py-24 lg:py-28; }
+
+  .eyebrow { @apply font-sans text-[13px] font-semibold uppercase text-jade; letter-spacing: 0.08em; }
+  .on-dark .eyebrow { @apply text-jade-light; }
+  .h2 { @apply text-[2rem] leading-[1.12] sm:text-[2.5rem] lg:text-[2.75rem]; }
+  .lead { @apply text-lg text-muted sm:text-xl; }
+  .label { @apply text-[13px] font-semibold uppercase; letter-spacing: 0.08em; }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition-colors duration-200;
+  }
+  .btn-primary { @apply bg-jade text-white hover:bg-jade-dark; }
+  .btn-secondary { @apply border border-line bg-white text-deep hover:border-jade hover:text-jade; }
+  .on-dark .btn-secondary { @apply border-white/25 bg-transparent text-white hover:border-jade-light hover:text-jade-light; }
+  .btn[aria-disabled="true"] { @apply cursor-not-allowed opacity-50; }
+  .btn-sm { @apply min-h-10 px-4 py-2 text-[15px]; }
+
+  /* Outlined mono status pill */
+  .pill { @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-0.5 font-mono text-[12px] leading-5; }
+  .pill-neutral { @apply border-line text-muted; }
+  .pill-jade { @apply border-jade text-jade; }
+  .pill-warning { @apply border-warning text-warning; }
+  .pill-deep { @apply border-deep text-deep; }
+  .on-dark .pill-neutral { @apply border-white/30 text-white/70; }
+  .on-dark .pill-jade { @apply border-jade-light text-jade-light; }
+
+  .card { @apply rounded-xl border border-line bg-white; }
+  .panel { @apply rounded-3xl; }
+
+  .demo-tag { @apply inline-flex items-center whitespace-nowrap rounded-full border border-line px-2.5 py-0.5 font-mono text-[11px] uppercase leading-5 tracking-wider text-muted; }
+}
+
+/* ---------- Motion ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop { 0% { transform: scale(0.92); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes travel { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes typing { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+
+.anim-rise { animation: rise 0.6s var(--ease-calm) both; }
+.anim-fade { animation: fade 0.5s ease both; }
+.anim-pop { animation: pop 0.45s var(--ease-calm) both; }
+.typing-dot { animation: typing 1.2s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+/* Elements that fade/slide in when a step is reached */
+.step-item { transition: opacity 0.5s var(--ease-calm), transform 0.5s var(--ease-calm); }
+.step-item[data-on="false"] { opacity: 0; transform: translateY(8px); }
+.step-item[data-on="true"] { opacity: 1; transform: none; }
+@media (max-width: 639px) {
+  /* Less movement on small screens: fade only */
+  .step-item[data-on="false"] { transform: none; }
+}
+
+/* Connector lines that fill as a sequence plays */
+.fill-line { position: relative; overflow: hidden; }
+.fill-line::after {
+  content: ""; position: absolute; inset: 0; background: var(--color-jade);
+  transform: scaleX(var(--fill, 0)); transform-origin: left; transition: transform 0.8s var(--ease-calm);
+}
+.fill-line-v::after { transform: scaleY(var(--fill, 0)); transform-origin: top; }
+
+/* Return curve, used once on the closing panel */
+.return-curve path { stroke-dasharray: 260; stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s var(--ease-calm) 0.2s; }
+.return-curve circle { transform-box: fill-box; transform-origin: center; transition: transform 0.5s var(--ease-calm) 1.6s; }
+.return-curve[data-on="false"] path { stroke-dashoffset: 260; }
+.return-curve[data-on="false"] circle { transform: scale(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+  }
+  .step-item[data-on="false"] { transform: none; }
+}
