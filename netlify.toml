@@ -1,22 +1,35 @@
-# Static site: no build step. Netlify serves /how-it-works from how-it-works.html automatically.
+# Vite + React site, prerendered to static HTML at build time.
 [build]
-  publish = "."
-  command = ""
+  command = "npm run build"
+  publish = "dist"
 
-# Old .html URLs -> clean URLs
+[build.environment]
+  NODE_VERSION = "22"
+
+# The site is now a single page. Old pages point to the matching section.
 [[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
 
 [[redirects]]
+  from = "/how-it-works"
+  to = "/#how-it-works"
+  status = 301
+
+[[redirects]]
   from = "/how-it-works.html"
-  to = "/how-it-works"
+  to = "/#how-it-works"
+  status = 301
+
+[[redirects]]
+  from = "/revenue-audit"
+  to = "/#demo"
   status = 301
 
 [[redirects]]
   from = "/revenue-audit.html"
-  to = "/revenue-audit"
+  to = "/#demo"
   status = 301
 
 [[redirects]]
@@ -26,13 +39,18 @@
 
 # Friendly shortcuts
 [[redirects]]
+  from = "/demo"
+  to = "/#demo"
+  status = 301
+
+[[redirects]]
   from = "/audit"
-  to = "/revenue-audit"
+  to = "/#demo"
   status = 301
 
 [[redirects]]
   from = "/book"
-  to = "/revenue-audit"
+  to = "/#demo"
   status = 301
 
 [[headers]]
@@ -45,7 +63,13 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
 
-# CSS/JS/images aren't fingerprinted: cache briefly and revalidate in the background.
+# Built JS/CSS have content hashes in their names, so they can be cached for good.
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Images and icons aren't fingerprinted: cache briefly and revalidate in the background.
 [[headers]]
   for = "/assets/*"
   [headers.values]
