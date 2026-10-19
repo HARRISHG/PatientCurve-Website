@@ -32,7 +32,10 @@ export function Footer() {
       <div className="border-t border-line">
         <div className="container-x flex flex-col justify-between gap-2 py-6 text-[14px] text-muted sm:flex-row">
           <span>© 2026 Patientcurve. All rights reserved.</span>
-          <span>Built for dental clinics.</span>
+          <span className="flex flex-wrap gap-x-5 gap-y-1">
+            <a href="/privacy" className="hover:text-jade">Privacy policy</a>
+            <a href="mailto:hello@patientcurve.com" className="hover:text-jade">hello@patientcurve.com</a>
+          </span>
         </div>
       </div>
     </footer>
