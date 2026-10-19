@@ -261,7 +261,8 @@ export function DemoBookingForm() {
                 {status !== "sending" && <Icon name="arrow" size={18} />}
               </button>
               <p id="form-note" className="mt-3 text-[13px] text-muted">
-                We'll only use these details to arrange your demo. No obligation.
+                We'll only use these details to arrange your demo. No obligation. See our{" "}
+                <a href="/privacy" className="underline underline-offset-2 hover:text-jade">privacy policy</a>.
               </p>
             </form>
           )}

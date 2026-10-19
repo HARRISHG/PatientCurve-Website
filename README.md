@@ -39,6 +39,10 @@ npm run preview    # serve dist/
 
 To test the alternative hero headline ("Turn more dental enquiries into booked appointments."), set `HEADLINE = HEADLINES.b` in `HeroSection.tsx`.
 
+## Privacy policy
+
+`public/privacy.html` is served at `/privacy` and linked from the footer and the demo form. It's a static page that uses `public/assets/basic.css`, like the 404 and thanks pages. The contact address is hello@patientcurve.com. Whenever the policy changes, update the "Last updated" date on the page.
+
 ## Configuration
 
 | Variable | Purpose |

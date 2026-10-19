@@ -37,7 +37,17 @@
   to = "/thanks"
   status = 301
 
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+
 # Friendly shortcuts
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy"
+  status = 301
+
 [[redirects]]
   from = "/demo"
   to = "/#demo"
